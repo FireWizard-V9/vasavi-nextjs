@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-10">
           <Link
-            href="/"
+            href="/collection"
             className="text-sm font-medium tracking-wider hover:text-gray-300 transition-colors"
           >
             COLLECTIONS
