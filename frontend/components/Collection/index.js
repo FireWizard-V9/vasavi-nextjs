@@ -2,6 +2,7 @@
 'use client'
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 
@@ -9,8 +10,17 @@ import { useState } from 'react';
 export default function Home() {
   
   return (
+    <>
+       {/* Navigation */}
+       <header className=" m-6 flex justify-between items-center ">
+        <Link href="/" className="text-sm font-medium">
+          ← BACK
+        </Link>
+        <div className="text-sm font-medium">
+          CATEGORIES/JULLEY LADAKH/JACKETS
+        </div>
+      </header>
     <div className="container mx-auto px-4 max-w-6xl">
-      
       <Head>
         <title>Fashion Collections</title>
         <meta name="description" content="Fashion collections and categories" />
@@ -20,9 +30,9 @@ export default function Home() {
       <main className="py-8">
         {/* Header Section */}
         <header className="text-center mb-8">
-          <h1 className="text-6xl font-bold tracking-wider mb-10">COLLECTIONS</h1>
-          <p className="text-sm text-gray-500">Inspired By The Rugged, Serene Landscapes Of Ladakh, This Jacket </p>
-          <p className="text-sm text-gray-500 text-center">Seamlessly BLENDS </p>
+          <h1 className="text-8xl font-bold font-[theater] tracking-tight mb-10">COLLECTIONS</h1>
+          <p className="text-xl text-gray-500">Inspired By The Rugged, Serene Landscapes Of Ladakh, This Jacket </p>
+          <p className="text-xl text-gray-500 text-center">Seamlessly BLENDS </p>
         </header>
 
         {/* Collections Section */}
@@ -38,7 +48,7 @@ export default function Home() {
                 className=""
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h2 className="text-5xl font-bold text-white tracking-widest mt-[20rem]">TECHNO</h2>
+                <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">TECHNO</h2>
               </div>
             </div>
           </div>
@@ -55,7 +65,7 @@ export default function Home() {
                 className=""
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h2 className="text-5xl font-bold text-white tracking-widest mt-[20rem]">JULLEY LADAKH</h2>
+                <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">JULLEY LADAKH</h2>
               </div>
             </div>
           </div>
@@ -72,7 +82,7 @@ export default function Home() {
                 className=""
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h2 className="text-5xl font-bold text-red-600 tracking-widest mt-[20rem]">DISRUPT.</h2>
+                <h2 className="text-9xl font-[theater] font-bold text-red-600 tracking-tight mt-[20rem]">DISRUPT.</h2>
               </div>
             </div>
           </div>
@@ -80,9 +90,9 @@ export default function Home() {
 
         {/* Categories Header */}
         <header className="text-center mb-8">
-          <h1 className="text-6xl font-bold tracking-wider mb-10">COLLECTIONS</h1>
-          <p className="text-sm text-gray-500">Inspired By The Rugged, Serene Landscapes Of Ladakh, This Jacket </p>
-          <p className="text-sm text-gray-500 text-center">Seamlessly BLENDS </p>
+          <h1 className="text-8xl font-bold font-[theater] tracking-tight mb-10">CATEGORIES</h1>
+          <p className="text-xl text-gray-500">Inspired By The Rugged, Serene Landscapes Of Ladakh, This Jacket </p>
+          <p className="text-xl text-gray-500 text-center">Seamlessly BLENDS </p>
         </header>
 
         {/* Categories Grid Section */}
@@ -97,7 +107,7 @@ export default function Home() {
               className=""
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="text-9xl font-bold text-white tracking-widest mt-[20rem]">TOP SELLERS</h2>
+              <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[23rem]">TOP SELLERS</h2>
             </div>
           </div>
 
@@ -111,7 +121,7 @@ export default function Home() {
               className=""
             />
             <div className="absolute inset-0 flex items-center justify-start">
-              <h2 className="text-7xl font-bold text-white tracking-widest mt-[18rem]">JACKETS</h2>
+              <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[19rem]">JACKETS</h2>
             </div>
           </div>
 
@@ -125,7 +135,7 @@ export default function Home() {
               className=""
             />
             <div className="absolute inset-0 flex items-center justify-start">
-              <h2 className="text-7xl font-bold text-white tracking-widest mt-[18rem]">CORSETS</h2>
+              <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[19rem]">CORSETS</h2>
             </div>
           </div>
 
@@ -139,7 +149,7 @@ export default function Home() {
               className=""
             />
             <div className="absolute inset-0 flex items-center justify-start">
-              <h2 className="text-7xl font-bold text-white tracking-widest mt-[18rem]">BOTTOMS</h2>
+              <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[19rem]">BOTTOMS</h2>
             </div>
           </div>
 
@@ -153,11 +163,12 @@ export default function Home() {
               className=""
             />
             <div className="absolute inset-0 flex items-center justify-start">
-              <h2 className="text-7xl font-bold text-white tracking-widest mt-[18rem]">SWEATERS</h2>
+              <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[19rem]">SWEATERS</h2>
             </div>
           </div>
         </section>
       </main>
     </div>
+          </>
   );
 }
