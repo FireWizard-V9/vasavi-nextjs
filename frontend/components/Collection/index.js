@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
        {/* Navigation */}
-       <header className=" m-6 flex justify-between items-center ">
+       <header className=" m-6 flex justify-between items-center mt-15 ">
         <Link href="/" className="text-sm font-medium">
           ← BACK
         </Link>
