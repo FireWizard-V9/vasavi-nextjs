@@ -15,7 +15,7 @@ const Navbar = () => {
             COLLECTIONS
           </Link>
           <Link
-            href="/"
+            href="/categories"
             className=" tracking-wider hover:text-gray-300 transition-colors"
           >
             CATEGORIES

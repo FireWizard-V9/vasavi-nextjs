@@ -17,7 +17,7 @@ export default function ProductDetail() {
     ];
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white mt-13">
             <Head>
                 <title>Ebon Aura Leather Jacket | Julley Ladakh</title>
                 <meta name="description" content="Ebon Aura Leather Jacket from the Julley Ladakh Collection" />
