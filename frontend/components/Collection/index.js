@@ -73,9 +73,11 @@ export default function Home() {
                   className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
+                <Link href='/julleyladakh'>
                   <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[15rem]">
                     JULLEY LADAKH
                   </h2>
+                </Link>
                 </div>
               </div>
             </div>
