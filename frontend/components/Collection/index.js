@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
        {/* Navigation */}
-       <header className=" m-6 flex justify-between items-center mt-15 ">
+       <header className=" m-8 flex justify-between items-center mt-15 ">
         <Link href="/" className="text-sm font-medium">
           ← BACK
         </Link>
@@ -65,7 +65,9 @@ export default function Home() {
                 className=""
               />
               <div className="absolute inset-0 flex items-center justify-center">
+                <Link href='/julleyladakh'>
                 <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">JULLEY LADAKH</h2>
+                </Link>
               </div>
             </div>
           </div>
