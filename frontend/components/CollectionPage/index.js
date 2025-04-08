@@ -82,7 +82,7 @@ export default function JulleyLadakhPage() {
               <p className="text-sm opacity-80 max-w-lg">
                 INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS COLLECTION 
                 SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER WITH THE REFINED 
-                SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT OF THE COLLECTION'S 
+                SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT OF THE COLLECTION&apos;S 
                 ESSENCE, IT SPEAKS TO THE UNTAMED BEAUTY AND RAW ELEGANCE OF THE 
                 REGION.
               </p>
@@ -93,7 +93,7 @@ export default function JulleyLadakhPage() {
               <p className="text-sm opacity-80 max-w-lg">
                 INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS COLLECTION
                 SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER WITH THE REFINED
-                SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT OF THE COLLECTION'S
+                SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT OF THE COLLECTION&apos;S
                 ESSENCE, IT SPEAKS TO THE UNTAMED BEAUTY AND RAW ELEGANCE OF THE
                 REGION.
               </p>
