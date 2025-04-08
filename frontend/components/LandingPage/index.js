@@ -109,11 +109,11 @@ export default function LandingPage() {
               IN
             </p>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed font-futura">
-              AT VASAVI, WE BELIEVE THAT CLOTHING ISN'T JUST FABRIC-IT'S A
-              STATEMENT. BREAK THE MOLD WITH VASAVI. EACH PIECE IS CRAFTED TO
-              REFLECT YOUR BOLD SPIRIT AND UNIQUE IDENTITY. FOR THOSE WHO DARE
-              TO BE DIFFERENT, OUR DESIGNS LET YOU WEAR YOUR TRUE SELF AND MAKE
-              A STATEMENT.
+              AT VASAVI, WE BELIEVE THAT CLOTHING ISN&apos;T JUST
+              FABRIC-IT&apos;S A STATEMENT. BREAK THE MOLD WITH VASAVI. EACH
+              PIECE IS CRAFTED TO REFLECT YOUR BOLD SPIRIT AND UNIQUE IDENTITY.
+              FOR THOSE WHO DARE TO BE DIFFERENT, OUR DESIGNS LET YOU WEAR YOUR
+              TRUE SELF AND MAKE A STATEMENT.
             </p>
           </div>
         </div>
