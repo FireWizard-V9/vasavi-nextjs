@@ -4,20 +4,30 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import AIAgentIcon from "../AIAgentsIcon";
 
 export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState("");
 
+  const productInfo = {
+    name: "EBON AURA LEATHER JACKET",
+    type: "leather jacket",
+    price: "RS.12,999.00",
+    collection: "Julley Ladakh",
+    id: "ebon-aura-jacket",
+    description: "INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS JACKET SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER WITH THE REFINED SOFTNESS OF GREY SUEDE."
+  };
+
   const productImages = [
-    "/images/jacket-main.jpg",
-    "/images/jacket-thumb-1.jpg",
-    "/images/jacket-thumb-2.jpg",
-    "/images/jacket-thumb-3.jpg",
-    "/images/jacket-thumb-4.jpg",
+    "/assets/images/collection_3.jpg",
+    "/assets/images/productinfo_1.jpg",
+    "/assets/images/productinfo_2.jpg",
+    "/assets/images/productinfo_1.jpg",
+    "/assets/images/productinfo_2.jpg",
   ];
 
   return (
-    <div className="min-h-screen bg-white mt-13">
+    <div className="min-h-screen bg-white mt-13 relative">
       <Head>
         <title>Ebon Aura Leather Jacket | Julley Ladakh</title>
         <meta
@@ -55,43 +65,18 @@ export default function ProductDetail() {
             </div>
 
             {/* Thumbnails */}
-            <div className="hidden lg:flex flex-col gap-5 w-[113px]  pl-4">
-              <div className="aspect-square relative w-80% h-[130px]">
-                <Image
-                  src="/assets/images/productinfo_1.jpg"
-                  alt={"Ebon Aura Leather Jacket - View "}
-                  layout="fill"
-                  objectFit="cover"
-                  className="bg-gray-100"
-                />
-              </div>
-              <div className="aspect-square relative w-80% h-[130px]">
-                <Image
-                  src="/assets/images/productinfo_2.jpg"
-                  alt={"Ebon Aura Leather Jacket - View "}
-                  layout="fill"
-                  objectFit="cover"
-                  className="bg-gray-100"
-                />
-              </div>
-              <div className="aspect-square relative w-80% h-[130px]">
-                <Image
-                  src="/assets/images/productinfo_1.jpg"
-                  alt={"Ebon Aura Leather Jacket - View "}
-                  layout="fill"
-                  objectFit="cover"
-                  className="bg-gray-100"
-                />
-              </div>
-              <div className="aspect-square relative w-80% h-[130px]">
-                <Image
-                  src="/assets/images/productinfo_2.jpg"
-                  alt={"Ebon Aura Leather Jacket - View "}
-                  layout="fill"
-                  objectFit="cover"
-                  className="bg-gray-100"
-                />
-              </div>
+            <div className="hidden lg:flex flex-col gap-5 w-[113px] pl-4">
+              {productImages.slice(1).map((img, index) => (
+                <div key={index} className="aspect-square relative w-80% h-[130px]">
+                  <Image
+                    src={img}
+                    alt={`Ebon Aura Leather Jacket - View ${index + 1}`}
+                    layout="fill"
+                    objectFit="cover"
+                    className="bg-gray-100"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
@@ -105,7 +90,7 @@ export default function ProductDetail() {
             </h1>
 
             <div className="mt-8 mb-6">
-              <p className="text-6xl font-normal ">RS.12,999.00</p>
+              <p className="text-6xl font-normal ">{productInfo.price}</p>
             </div>
 
             {/* Size Selector */}
@@ -146,11 +131,7 @@ export default function ProductDetail() {
             {/* Product Description */}
             <div className="text-gray-500 mb-8 text-lg font-normal">
               <p className="uppercase">
-                INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS JACKET
-                SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER WITH THE REFINED
-                SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT OF THE
-                COLLECTION&apos;S ESSENCE, IT SPEAKS TO THE UNTAMED BEAUTY AND
-                RAW ELEGANCE OF THE REGION.
+                {productInfo.description}
               </p>
             </div>
 
@@ -171,6 +152,9 @@ export default function ProductDetail() {
           </div>
         </div>
       </main>
+
+      {/* AI Agent Floating Icon */}
+      <AIAgentIcon productInfo={productInfo} />
     </div>
   );
 }
