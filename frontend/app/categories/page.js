@@ -219,9 +219,9 @@ const Products = () => {
         <Link href="/" className="text-sm font-medium">
           ← BACK
         </Link>
-        <div className="text-sm font-medium">
-          CATEGORIES/JULLEY LADAKH/JACKETS
-        </div>
+        <Link href = 'collection' className="text-sm font-medium">
+          Collections
+        </Link>
       </header>
 
       <CategorySection categoryData={categoryData} />

@@ -102,13 +102,13 @@ export default function LandingPage() {
             ABOUT US
           </h2>
           <div className="md:w-2/3 space-y-6">
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-Gotham">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
               VASAVI IS THE STREETWEAR BRAND FOR THOSE WHO WEAR THEIR STORY WITH
               PRIDE. HANDMADE AND CRAFTED WITH FEARLESS CREATIVES, EACH PIECE
               REFLECTS UNAPOLOGETIC AUTHENTICITY FOR THOSE WHO REFUSE TO BLEND
               IN
             </p>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-futura">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
               AT VASAVI, WE BELIEVE THAT CLOTHING ISN&apos;T JUST
               FABRIC-IT&apos;S A STATEMENT. BREAK THE MOLD WITH VASAVI. EACH
               PIECE IS CRAFTED TO REFLECT YOUR BOLD SPIRIT AND UNIQUE IDENTITY.
