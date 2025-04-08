@@ -5,14 +5,15 @@ import Link from 'next/link';
 
 export default function JulleyLadakhPage() {
   const collectionItems = [
-    { id: 1, name: 'WORKWEAR CHECKS', price: '₹12,999', collec_name:'DISRUPT', image: '/assets/images/collecpage_1.jpg' },
-    { id: 2, name: 'SCARELA', price: '₹7,999',collec_name:'TOP SELLERS', image: '/assets/images/collecpage_2.jpg' },
-    { id: 3, name: 'BASEWEAVE', price: '₹11,999', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_3.jpg' },
-    { id: 4, name: 'DEADLACE TRENCH', price: '₹15,999', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_4.jpg' },
-    { id: 5, name: 'NIGHTSAVE', price: '₹9,999',collec_name:'TOP SELLERS', image: '/assets/images/collecpage_5.jpg' },
-    { id: 6, name: 'BODYCRITICAL', price: '₹5,999', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_6.jpg' },
-    { id: 7, name: 'HYPERTHERMAL JACKET', price: '₹14,999', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_7.jpg' },
-    { id: 8, name: 'APPROACHING PANTS', price: '₹10,999', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_8.jpg' },
+    { id: 1, name: 'BOXED BREEZE', price: '₹2,599.00', collec_name:'DISRUPT', image: '/assets/images/collecpage_1.jpg' },
+    { id: 2, name: 'KHADELLA', price: '₹3,499.00',collec_name:'TOP SELLERS', image: '/assets/images/collecpage_2.jpg' },
+    { id: 3, name: 'SLEEK MODE', price: '₹2,800.00', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_3.jpg' },
+    { id: 4, name: 'CHILLINOS', price: '₹2,800.00', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_4.jpg' },
+    { id: 5, name: 'DREAMWAVE', price: '₹3,800.00', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_5.jpg' },
+    { id: 6, name: 'EMBODY GRACE', price: '₹3,599.00',collec_name:'TOP SELLERS', image: '/assets/images/collecpage_6.jpg' },
+    { id: 7, name: 'CROPPED TUNDRA GUARD', price: '₹8,000.00', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_7.jpg' },
+    { id: 8, name: 'PARACHUTE PANTS', price: '₹2,999.00', collec_name:'TOP SELLERS', image: '/assets/images/collecpage_8.jpg' },
+    
   ];
 
   return (
@@ -154,7 +155,7 @@ export default function JulleyLadakhPage() {
               </div>
               <div className="mt-2 flex flex-col">
                 <span className="text-sm font-sm font-[theater] text-zinc-600 text-center ">{item.collec_name}</span>
-                <span className="text-sm font-medium text-center ">{item.name}</span>
+                <span className="text-sm font-normal text-center ">{item.name}</span>
                 <span className="text-sm opacity-70 text-center">{item.price}</span>
               </div>
             </div>
