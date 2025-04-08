@@ -66,6 +66,7 @@ const NewCollection = ({ products }) => {
                         <div className="mt-2 text-center">
                           <h3 className="text-sm font-medium uppercase">
                             {product.name}
+                            
                           </h3>
                           <p className="text-sm">{product.variant}</p>
                           <p className="text-sm">{product.price}</p>
