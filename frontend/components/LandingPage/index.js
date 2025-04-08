@@ -8,60 +8,60 @@ export default function LandingPage() {
   const products = [
     {
       id: 1,
-      name: "LOREM IPSUM T SHIRT",
-      variant: "T PINK",
-      price: "2,799 ₹",
-      image: "/assets/images/logo.png",
+      name: "KHADELLA",
+      variant: "DISRUPT",
+      price: "3,499 ₹",
+      image: "/assets/images/shirt.JPG",
     },
     {
       id: 2,
-      name: "LOREM IPSUM",
-      variant: "DRAFT 1",
-      price: "2,799 ₹",
-      image: "/assets/images/logo.png",
+      name: "SHANTI NOIR",
+      variant: "JACKETS",
+      price: "9,999 ₹",
+      image: "/assets/images/jacket.JPG",
     },
     {
       id: 3,
-      name: "LOREM IPSUM",
-      variant: "DRAFT 1",
-      price: "2,799 ₹",
-      image: "/assets/images/logo.png",
+      name: "LUCIDENT",
+      variant: "SHIRTS",
+      price: "2,599 ₹",
+      image: "/assets/images/seethrough.JPG",
     },
     {
       id: 4,
-      name: "LOREM IPSUM",
-      variant: "DRAFT 1",
-      price: "2,799 ₹",
-      image: "/assets/images/logo.png",
+      name: "VASATAR",
+      variant: "Julley Ladakh",
+      price: "4,200 ₹",
+      image: "/assets/images/pullover.JPG",
     },
     // Adding additional products to demonstrate scrolling
     {
       id: 5,
-      name: "LOREM IPSUM",
-      variant: "DRAFT 2",
-      price: "3,299 ₹",
-      image: "/assets/images/logo.png",
+      name: "GALACTIC GLOW",
+      variant: "Disrupt",
+      price: "2,299 ₹",
+      image: "/assets/images/tshirt-1.JPG",
     },
     {
       id: 6,
-      name: "LOREM IPSUM",
-      variant: "DRAFT 2",
-      price: "3,299 ₹",
-      image: "/assets/images/logo.png",
+      name: "RAW ALLURE",
+      variant: "Dress/Body Suits/Corsets",
+      price: "2,399 ₹",
+      image: "/assets/images/top.JPG",
     },
     {
       id: 7,
-      name: "LOREM IPSUM",
-      variant: "LIMITED",
-      price: "3,699 ₹",
-      image: "/assets/images/logo.png",
+      name: "ECHOS OF PAST",
+      variant: "Disrupt",
+      price: "3,299 ₹",
+      image: "/assets/images/jacket-2.JPG",
     },
     {
       id: 8,
-      name: "LOREM IPSUM",
-      variant: "SPECIAL",
-      price: "4,299 ₹",
-      image: "/assets/images/logo.png",
+      name: "GOOD OL' DAYS",
+      variant: "DISRUPT",
+      price: "2,199 ₹",
+      image: "/assets/images/ishirt2.JPG",
     },
   ];
 
@@ -102,32 +102,18 @@ export default function LandingPage() {
             ABOUT US
           </h2>
           <div className="md:w-2/3 space-y-6">
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-Gotham">
               VASAVI IS THE STREETWEAR BRAND FOR THOSE WHO WEAR THEIR STORY WITH
-              PRIDE, HANDMADE AND CRAFTED WITH FEARLESS CREATIVES. EACH PIECE
+              PRIDE. HANDMADE AND CRAFTED WITH FEARLESS CREATIVES, EACH PIECE
               REFLECTS UNAPOLOGETIC AUTHENTICITY FOR THOSE WHO REFUSE TO BLEND
               IN
             </p>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              AT VASAVI, WE BELIEVE THAT CLOTHING ISN'T JUST FABRIC—IT'S A
-              STATEMENT. BREAK THE MOLD WITH VASAVI; EACH PIECE IS CRAFTED TO
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed font-futura">
+              AT VASAVI, WE BELIEVE THAT CLOTHING ISN'T JUST FABRIC-IT'S A
+              STATEMENT. BREAK THE MOLD WITH VASAVI. EACH PIECE IS CRAFTED TO
               REFLECT YOUR BOLD SPIRIT AND UNIQUE IDENTITY. FOR THOSE WHO DARE
               TO BE DIFFERENT, OUR DESIGNS LET YOU WEAR YOUR TRUE SELF AND MAKE
               A STATEMENT.
-            </p>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              VASAVI IS THE FUTURE OF FASHION INNOVATION. OUR VISION IS TO
-              CREATE HAUTE COUTURE INFUSED WITH CUTTING-EDGE TECHNOLOGY. WE
-              BELIEVE IN SMART, SUSTAINABLE, AND STYLISH CLOTHING THAT'S
-              TAILORED SPECIFICALLY FOR THOSE WHO WANT TO LIVE BOLDLY.
-            </p>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-              OUR DESIGNS ARE BOLD, OUR TECHNOLOGY IS QUIET, AND OUR IMPACT IS
-              LASTING. THE VASAVI COMMITMENT IS TO PROVIDE THE HIGHEST QUALITY
-              GARMENTS THAT BLEND SOPHISTICATED AESTHETICS WITH PRACTICAL DESIGN
-              AND DIGITAL FUNCTIONALITY. EACH PIECE SYMBOLIZES THE CONVERGENCE
-              OF FASHION, TECHNOLOGY, AND SUSTAINABILITY THAT TRANSFORMS
-              ORDINARY INTO EXTRAORDINARY.
             </p>
           </div>
         </div>
@@ -138,7 +124,7 @@ export default function LandingPage() {
         <h2 className="text-4xl font-bold mb-12 px-4">OUR AI FEATURES</h2>
         <div className="flex flex md:flex-row gap-8 justify-center px-4">
           <Image
-            src="/assets/images/placeholder.webp"
+            src="/assets/images/ai.png"
             alt="Vasavi fashion models"
             height={500}
             width={500}
