@@ -115,9 +115,9 @@ export default function ProductDetail() {
 
             {/* Action Buttons */}
             <div className="flex gap-4 mb-8">
-              <button className="w-full bg-black text-white py-3 px-4 font-medium">
-                ADD TO BAG
-              </button>
+              <Link href='/cart' className="w-full"><button className="w-full bg-black text-white py-3 px-4 font-medium">
+                ADD TO CART
+              </button></Link>
               <button className="whitespace-nowrap font-normal text-lg">
                 ADD TO WISHLIST
               </button>

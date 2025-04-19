@@ -140,8 +140,8 @@ export default function JulleyLadakhPage() {
               </h2>
 
               <div className="mb-8">
-                <p className="font-medium mb-2">MADE WITH LOVE BY 19 PEOPLE</p>
-                <p className="text-sm opacity-80 max-w-lg">
+                <p className="font-medium mb-2 ml-4">MADE WITH LOVE BY 19 PEOPLE</p>
+                <p className="text-sm opacity-80 max-w-lg ml-4">
                   INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS
                   COLLECTION SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER
                   WITH THE REFINED SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT
@@ -150,16 +150,6 @@ export default function JulleyLadakhPage() {
                 </p>
               </div>
 
-              <div>
-                <p className="font-medium mb-2">MADE WITH LOVE BY 19 PEOPLE</p>
-                <p className="text-sm opacity-80 max-w-lg">
-                  INSPIRED BY THE RUGGED, SERENE LANDSCAPES OF LADAKH, THIS
-                  COLLECTION SEAMLESSLY BLENDS THE BOLDNESS OF BLACK LEATHER
-                  WITH THE REFINED SOFTNESS OF GREY SUEDE. A PERFECT EMBODIMENT
-                  OF THE COLLECTION&apos;S ESSENCE, IT SPEAKS TO THE UNTAMED
-                  BEAUTY AND RAW ELEGANCE OF THE REGION.
-                </p>
-              </div>
             </div>
 
             <div className="lg:w-1/2 grid grid-cols-2 gap-5 mt-8 lg:mt-0">
@@ -177,15 +167,6 @@ export default function JulleyLadakhPage() {
                   alt="Prayer Flags"
                   layout="fill"
                   objectFit="cover"
-                />
-              </div>
-              <div className="relative aspect-square ">
-                <Image
-                  src="/assets/images/julley_3.jpg"
-                  alt="Traditional House"
-                  layout="fill"
-                  objectFit="cover"
-                  className="ml-52 mt-5"
                 />
               </div>
             </div>
