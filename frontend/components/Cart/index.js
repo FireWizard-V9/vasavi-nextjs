@@ -151,7 +151,7 @@ export default function Cart() {
                             <Link href="#" className="underline">Apply discount</Link>
                         </div>
                         
-                        <p className="text-sm mb-2">Sign in to use your personal offers!</p>
+                        <p className="text-md mb-2">Sign in to use your personal offers!</p>
                         
                         <button className="w-full border font-medium border-gray-300 py-3 mb-4">
                             Sign in
@@ -168,7 +168,7 @@ export default function Cart() {
                             Continue to checkout
                         </button>
                         
-                        <p className="text-red-500 text-sm text-center my-4">
+                        <p className="text-red-500 text-md text-center my-4">
                             Vasavi never sends payment links via WhatsApp,<br />
                             SMS or email. Pay only via Vasavi Website.
                         </p>
@@ -187,7 +187,7 @@ export default function Cart() {
                                 </div>
                             </div>
                             
-                            <p className="text-sm text-gray-500 ">
+                            <p className="text-md text-gray-500 ">
                                 Prices and delivery costs are not confirmed until you've reached the checkout.<br />
                                 15 days free returns. Read more about <Link href="#" className="underline">return and refund policy</Link>.<br />
                                 Customers would receive an SMS/WhatsApp notifications regarding deliveries on the registered phone number
