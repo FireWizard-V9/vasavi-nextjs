@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
@@ -48,6 +50,9 @@ const Navbar = () => {
             className=" tracking-wider hover:text-gray-300 transition-colors"
           >
             WISHLIST
+          </Link>
+          <Link href="/cart" className="relative flex items-center text-[19px]">
+          <FontAwesomeIcon icon={faCartShopping} />
           </Link>
         </div>
       </div>
