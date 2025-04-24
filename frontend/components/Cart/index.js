@@ -1,81 +1,47 @@
-"use client"
-import { useState } from 'react';
+// components/Cart/index.js
+"use client";
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons'; 
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
-import { faAdd } from '@fortawesome/free-solid-svg-icons';
-
+import { faXmark, faMinus, faAdd } from '@fortawesome/free-solid-svg-icons';
+import { useCart } from '@/lib/CartContext';
 
 export default function Cart() {
-    const [cartItems, setCartItems] = useState([
-        {
-            id: 1,
-            name: 'SLEEK MODE',
-            price: 2800.00,
-            quantity: 1,
-            size: 'M',
-            image: '/assets/images/collecpage_3.jpg',
-        },
-        {
-            id: 2,
-            name: 'CROPPED TUNDRA GUARD',
-            price: 8000.00,
-            quantity: 2,
-            size: 'M',
-            image: '/assets/images/collecpage_7.jpg',
-        },
-        {
-            id: 3,
-            name: 'PARACHUTE PANTS',
-            price: 2800.00,
-            quantity: 1,
-            size: 'M',
-            image: '/assets/images/collecpage_8.jpg',
-        }
-    ]);
+    const { cartItems, removeFromCart, updateQuantity, calculateSubtotal, isInitialized } = useCart();
+    
+    const isCartEmpty = cartItems.length === 0;
+    const total = calculateSubtotal();
 
-    const [isCartEmpty, setIsCartEmpty] = useState(false);
-
-    const updateQuantity = (id, change) => {
-        setCartItems(cartItems.map(item => {
-            if (item.id === id) {
-                const newQuantity = Math.max(1, item.quantity + change);
-                return { ...item, quantity: newQuantity };
-            }
-            return item;
-        }));
+    // Format price for display
+    const formatPrice = (price) => {
+        return `RS.${price.toLocaleString('en-IN', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}`;
     };
 
-    const removeItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-        if (cartItems.length === 1) {
-            setIsCartEmpty(true);
-        }
-    };
-
-    const calculateSubtotal = () => {
-        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-    };
-
-    const calculateTotal = () => {
-        return calculateSubtotal();
-    };
-
-    const total = calculateTotal();
+    if (!isInitialized) {
+        return <div className="min-h-screen flex items-center justify-center">Loading cart...</div>;
+    }
 
     if (isCartEmpty) {
         return (
             <div className="container mx-auto px-4 py-12 max-w-6xl">
                 <div className="text-center py-16">
                     <h1 className="text-3xl font-bold mb-4">Your Shopping Bag is empty!</h1>
-                    <p className="mb-6">Sign in to save or access already saved items in your shopping bag.</p>
-                    <Link href="/signin" className="text-black underline font-medium hover:text-gray-600">Sign in</Link>
+                    <p className="mb-6">Browse our collections and add some items to your cart.</p>
+                    <Link href="/products" className="text-black underline font-medium hover:text-gray-600">
+                        Continue Shopping
+                    </Link>
                 </div>
             </div>
         );
     }
+
+    // For debugging - log cart items and their prices
+    console.log('Cart Items:', cartItems);
+    console.log('Total:', total);
 
     return (
         <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -83,17 +49,16 @@ export default function Cart() {
 
             <div className="flex flex-col lg:flex-row gap-8">
                 {/* Cart Items - Left Section */}
-                <div className="lg:w-2/3 ">
+                <div className="lg:w-2/3">
                     {cartItems.map((item) => (
-                        <div key={item.id} className="border p-6 mb-6 flex items-center border-gray-400">
+                        <div key={`${item.id}-${item.size}`} className="border p-6 mb-6 flex items-center border-gray-400">
+                            <button
+                                onClick={() => removeFromCart(item.id, item.size)}
+                                className="flex items-center justify-center text-gray-700 border border-gray-400 rounded-full w-[30px] h-[30px] text-center hover:text-red-500 mr-5"
+                            >
+                                <FontAwesomeIcon icon={faXmark} />
+                            </button>
                             
-                             <button
-                                        onClick={() => removeItem(item.id)}
-                                        className="flex items-center justify-center text-gray-700 border border-gray-400 rounded-full w-[30px] h-[30px] text-center hover:text-red-500 mr-5"
-                                    >
-                                   <FontAwesomeIcon icon={faXmark} />
-
-                                    </button>
                             <div className="w-32 h-36 relative bg-gray-100 mr-6">
                                 <Image
                                     src={item.image}
@@ -114,7 +79,7 @@ export default function Cart() {
                                     <div className="flex border border-gray-300">
                                         <button
                                             className="px-3 py-1 hover:bg-gray-100"
-                                            onClick={() => updateQuantity(item.id, -1)}
+                                            onClick={() => updateQuantity(item.id, item.size, -1)}
                                         >
                                             <FontAwesomeIcon icon={faMinus} />
                                         </button>
@@ -126,16 +91,17 @@ export default function Cart() {
                                         />
                                         <button
                                             className="px-3 py-1 hover:bg-gray-100"
-                                            onClick={() => updateQuantity(item.id, 1)}
+                                            onClick={() => updateQuantity(item.id, item.size, 1)}
                                         >
-                                           <FontAwesomeIcon icon={faAdd} />
+                                            <FontAwesomeIcon icon={faAdd} />
                                         </button>
                                     </div>
                                     
                                     <div className="text-right">
-                                        <span className="text-2xl font-medium font-[theater]">₹{item.price.toFixed(2)}</span>
+                                        <span className="text-2xl font-medium font-[theater]">
+                                            {formatPrice(item.priceValue * item.quantity)}
+                                        </span>
                                     </div>
-                                   
                                 </div>
                             </div>
                         </div>
@@ -144,8 +110,7 @@ export default function Cart() {
 
                 {/* Right Side - Order Summary */}
                 <div className="lg:w-1/3 border-gray-400">
-                    {/* Discount Section */}
-                    <div className="mb-6 ">
+                    <div className="mb-6">
                         <div className="flex justify-between mb-2">
                             <span>Discounts</span>
                             <Link href="#" className="underline">Apply discount</Link>
@@ -161,7 +126,7 @@ export default function Cart() {
                         
                         <div className="flex justify-between mb-10">
                             <span>Total</span>
-                            <span>Rs. {total.toFixed(2)}</span>
+                            <span>{formatPrice(total)}</span>
                         </div>
                         
                         <button className="w-full bg-gray-200 text-black py-3 mb-4 font-medium">
@@ -203,21 +168,3 @@ export default function Cart() {
         </div>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

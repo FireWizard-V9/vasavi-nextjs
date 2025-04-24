@@ -1,15 +1,17 @@
-// pages/index.js
 "use client";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { getAllCollections } from "@/lib/collectionService";
 
-export default function Home() {
+export default function Collection() {
+  const collections = getAllCollections();
+
   return (
     <>
-       {/* Navigation */}
-       <header className=" m-8 flex justify-between items-center mt-15 ">
+      {/* Navigation */}
+      <header className="m-8 flex justify-between items-center mt-15">
         <Link href="/" className="text-sm font-medium">
           ← BACK
         </Link>
@@ -54,9 +56,11 @@ export default function Home() {
                   className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">
-                    TECHNO
-                  </h2>
+                  <Link href="/collection/techno">
+                    <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">
+                      TECHNO
+                    </h2>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -73,11 +77,11 @@ export default function Home() {
                   className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                <Link href='/julleyladakh'>
-                  <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[15rem]">
-                    JULLEY LADAKH
-                  </h2>
-                </Link>
+                  <Link href="/collection/julley-ladakh">
+                    <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[15rem]">
+                      JULLEY LADAKH
+                    </h2>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -94,9 +98,11 @@ export default function Home() {
                   className=""
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h2 className="text-9xl font-[theater] font-bold text-red-600 tracking-tight mt-[20rem]">
-                    DISRUPT.
-                  </h2>
+                  <Link href="/collection/disrupt">
+                    <h2 className="text-9xl font-[theater] font-bold text-red-600 tracking-tight mt-[20rem]">
+                      DISRUPT.
+                    </h2>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -143,8 +149,8 @@ export default function Home() {
                 className=""
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <Link href='/julleyladakh'>
-                <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[10rem]">JULLEY LADAKH</h2>
+                <Link href="/collection/julley-ladakh">
+                  <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[11rem]">JULLEY LADAKH</h2>
                 </Link>
               </div>
             </div>

@@ -122,7 +122,7 @@ export default function LandingPage() {
       {/* AI Features Section */}
       <section className="py-16 px-4">
         <h2 className="text-4xl font-bold mb-12 px-4">OUR AI FEATURES</h2>
-        <div className="flex flex md:flex-row gap-8 justify-center px-4">
+        <div className="flex  md:flex-row gap-8 justify-center px-4">
           <Image
             src="/assets/images/ai.png"
             alt="Vasavi fashion models"

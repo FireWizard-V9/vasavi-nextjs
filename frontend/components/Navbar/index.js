@@ -1,17 +1,51 @@
+// components/Navbar/index.js
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const [cartCount, setCartCount] = useState(0);
+  
+  // Load cart count from localStorage on client-side
+  useEffect(() => {
+    const updateCartCount = () => {
+      const storedCart = localStorage.getItem('cart');
+      if (storedCart) {
+        try {
+          const cartItems = JSON.parse(storedCart);
+          const count = cartItems.reduce((total, item) => total + item.quantity, 0);
+          setCartCount(count);
+        } catch (e) {
+          console.error("Failed to parse cart data:", e);
+          setCartCount(0);
+        }
+      }
+    };
+    
+    // Initial load
+    updateCartCount();
+    
+    // Listen for storage events (when cart is updated from another tab)
+    window.addEventListener('storage', updateCartCount);
+    
+    // Custom event for cart updates within the same tab
+    window.addEventListener('cartUpdated', updateCartCount);
+    
+    return () => {
+      window.removeEventListener('storage', updateCartCount);
+      window.removeEventListener('cartUpdated', updateCartCount);
+    };
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-black text-white py-4 px-6 font-[neuehaas] font-light text-md z-50">
       <div className="container mx-auto flex justify-between items-center ">
         <div className="flex space-x-10">
           <Link
-            href="/collection"
+            href="/collections"
             className=" tracking-wider hover:text-gray-300 transition-colors"
           >
             COLLECTIONS
@@ -52,7 +86,12 @@ const Navbar = () => {
             WISHLIST
           </Link>
           <Link href="/cart" className="relative flex items-center text-[19px]">
-          <FontAwesomeIcon icon={faCartShopping} />
+            <FontAwesomeIcon icon={faCartShopping} />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
           </Link>
         </div>
       </div>
