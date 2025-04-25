@@ -44,7 +44,7 @@ export default function Cart() {
             Browse our collections and add some items to your cart.
           </p>
           <Link
-            href="/collections"
+            href="/categories"
             className="text-black underline font-medium hover:text-gray-600"
           >
             Continue Shopping

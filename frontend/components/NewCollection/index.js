@@ -1,11 +1,47 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { getNewProducts } from "@/lib/ProductService";
 
-const NewCollection = ({ products }) => {
+const NewCollection = () => {
+  const [products, setProducts] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Fetch new products from the productService
+    const newProducts = getNewProducts();
+    setProducts(newProducts);
+  }, []);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    // Function to handle scroll events
+    const handleScroll = () => {
+      if (!scrollContainer) return;
+
+      const scrollPosition = scrollContainer.scrollLeft;
+      const containerWidth = scrollContainer.clientWidth;
+
+      // Calculate which page we're on based on scroll position
+      const newIndex = Math.round(scrollPosition / containerWidth);
+
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
+    };
+
+    // Add scroll event listener
+    scrollContainer.addEventListener("scroll", handleScroll);
+
+    // Clean up
+    return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeIndex]);
 
   const totalSlides = Math.ceil(products.length / 4);
 
@@ -38,7 +74,11 @@ const NewCollection = ({ products }) => {
           <div
             ref={scrollContainerRef}
             className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch", // Better touch scrolling for iOS
+            }}
           >
             {/* We'll create "pages" of 4 products each */}
             {Array.from({ length: totalSlides }).map((_, pageIndex) => (
@@ -51,13 +91,13 @@ const NewCollection = ({ products }) => {
                     .slice(pageIndex * 4, (pageIndex + 1) * 4)
                     .map((product) => (
                       <Link
-                        href="/productdetails"
+                        href={`/product/${product.id}`}
                         key={product.id}
                         className="flex flex-col"
                       >
                         <div className="bg-gray-800 aspect-square relative">
                           <Image
-                            src={product.image}
+                            src={product.imageSrc}
                             alt={product.name}
                             fill
                             className="object-cover"
@@ -66,9 +106,8 @@ const NewCollection = ({ products }) => {
                         <div className="mt-2 text-center">
                           <h3 className="text-sm font-medium uppercase">
                             {product.name}
-                            
                           </h3>
-                          <p className="text-sm">{product.variant}</p>
+                          <p className="text-sm">{product.collection}</p>
                           <p className="text-sm">{product.price}</p>
                         </div>
                       </Link>
@@ -101,18 +140,20 @@ const NewCollection = ({ products }) => {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {[...Array(totalSlides)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => scrollToIndex(i)}
-              className={`h-2 w-2 rounded-full ${
-                i === activeIndex ? "bg-white" : "bg-gray-600"
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-            ></button>
-          ))}
-        </div>
+        {totalSlides > 1 && (
+          <div className="flex justify-center mt-8 space-x-2">
+            {[...Array(totalSlides)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                className={`h-2 w-2 rounded-full ${
+                  i === activeIndex ? "bg-white" : "bg-gray-600"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

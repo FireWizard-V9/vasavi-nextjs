@@ -40,14 +40,14 @@ const CategorySection = () => {
     <div className="max-w-screen-xl mx-auto px-4">
       {/* Category Navigation */}
       <div className="flex justify-center overflow-x-auto mb-8 pb-2 no-scrollbar">
-        <div className="flex gap-4">
+        <div className="flex gap-5">
           {productTypes.map((category) => (
             <button
               key={category}
               onClick={() => handleCategoryChange(category)}
               className={`flex-none px-6 py-3 text-sm font-medium uppercase whitespace-nowrap transition-colors ${
                 activeCategory === category
-                  ? "bg-black text-white"
+                  ? "bg-gray-800 text-white"
                   : "bg-white text-black border border-gray-300 hover:bg-gray-100"
               }`}
             >
@@ -58,7 +58,7 @@ const CategorySection = () => {
       </div>
 
       {/* Products Display */}
-      <div className="mb-16">
+      <div >
         <h1 className="text-3xl md:text-5xl font-bold mb-8">
           {activeCategory === "ALL" ? "All Products" : activeCategory}
         </h1>

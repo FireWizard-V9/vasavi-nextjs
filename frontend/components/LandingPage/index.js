@@ -5,66 +5,6 @@ import Link from "next/link";
 import NewCollection from "../NewCollection";
 
 export default function LandingPage() {
-  const products = [
-    {
-      id: 1,
-      name: "KHADELLA",
-      variant: "DISRUPT",
-      price: "3,499 ₹",
-      image: "/assets/images/shirt.JPG",
-    },
-    {
-      id: 2,
-      name: "SHANTI NOIR",
-      variant: "JACKETS",
-      price: "9,999 ₹",
-      image: "/assets/images/jacket.JPG",
-    },
-    {
-      id: 3,
-      name: "LUCIDENT",
-      variant: "SHIRTS",
-      price: "2,599 ₹",
-      image: "/assets/images/seethrough.JPG",
-    },
-    {
-      id: 4,
-      name: "VASATAR",
-      variant: "Julley Ladakh",
-      price: "4,200 ₹",
-      image: "/assets/images/pullover.JPG",
-    },
-    // Adding additional products to demonstrate scrolling
-    {
-      id: 5,
-      name: "GALACTIC GLOW",
-      variant: "Disrupt",
-      price: "2,299 ₹",
-      image: "/assets/images/tshirt-1.JPG",
-    },
-    {
-      id: 6,
-      name: "RAW ALLURE",
-      variant: "Dress/Body Suits/Corsets",
-      price: "2,399 ₹",
-      image: "/assets/images/top.JPG",
-    },
-    {
-      id: 7,
-      name: "ECHOS OF PAST",
-      variant: "Disrupt",
-      price: "3,299 ₹",
-      image: "/assets/images/jacket-2.JPG",
-    },
-    {
-      id: 8,
-      name: "GOOD OL' DAYS",
-      variant: "DISRUPT",
-      price: "2,199 ₹",
-      image: "/assets/images/ishirt2.JPG",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white mt-14 ">
       {/* Hero Section */}
@@ -93,7 +33,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <NewCollection products={products} />
+      <NewCollection />
 
       {/* About Us Section */}
       <section className="py-16 px-4 sm:px-8 max-w-7xl mx-auto">
@@ -124,7 +64,7 @@ export default function LandingPage() {
         <h2 className="text-4xl font-bold mb-12 px-4">OUR AI FEATURES</h2>
         <div className="flex  md:flex-row gap-8 justify-center px-4">
           <Image
-            src="/assets/images/ai.png"
+            src="/assets/images/comingsoon.jpg"
             alt="Vasavi fashion models"
             height={500}
             width={500}

@@ -191,19 +191,19 @@ export default function ProductDetail({ productId }) {
             </div>
 
             {/* Size Info Section */}
-            <div className="border-t border-b py-4 mb-8">
+            {/* <div className="border-t border-b py-4 mb-8">
               <button className="flex items-center justify-between w-full font-medium">
                 SIZE INFO
                 <ChevronDown size={20} />
               </button>
-            </div>
+            </div> */}
 
             {/* Shop All Button */}
-            <div>
+            {/* <div>
               <button className="border border-black py-3 px-6 font-medium">
                 SHOP ALL NEW ARRIVALS
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </main>

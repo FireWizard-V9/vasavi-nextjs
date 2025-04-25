@@ -38,7 +38,7 @@ export default function WishlistPage() {
           <h1 className="text-5xl font-bold mb-12 font-[theater] mt-20">YOUR WISHLIST</h1>
           <div className="text-center py-16">
             <p className="text-xl mb-8">Your wishlist is empty</p>
-            <Link href="/collections" className="bg-black text-white py-3 px-6 font-medium">
+            <Link href="/categories" className="bg-black text-white py-3 px-6 font-medium">
               CONTINUE SHOPPING
             </Link>
           </div>
@@ -50,8 +50,8 @@ export default function WishlistPage() {
   return (
     <div className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
-          <h1 className="text-5xl font-bold font-[theater]">YOUR WISHLIST</h1>
+        <div className="flex justify-between items-center mb-12 mt-5">
+          <h1 className="text-5xl font-bold font-[theater] ">YOUR WISHLIST</h1>
           <button 
             onClick={clearWishlist}
             className="text-gray-500 flex items-center gap-2 hover:text-black"
