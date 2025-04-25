@@ -1,9 +1,21 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model products {
+  id                  Int      @id @default(autoincrement())
+  style_image         String?  @db.VarChar(255)
+  style_name          String?  @db.VarChar(255)
+  style_number        String?  @db.VarChar(50)
+  product_link        String?  @db.VarChar(255)
+  total_quantity      Int?
+  discounted_price    Decimal? @db.Decimal(10, 2)
+  website_price       Decimal? @db.Decimal(10, 2)
+  product_description String?  @db.Text
+  s3_image_url        String?  @db.VarChar(255)
 }

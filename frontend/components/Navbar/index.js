@@ -8,8 +8,6 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
-  
-  // Load cart count from localStorage on client-side
   useEffect(() => {
     const updateCartCount = () => {
       const storedCart = localStorage.getItem('cart');
@@ -24,14 +22,8 @@ const Navbar = () => {
         }
       }
     };
-    
-    // Initial load
     updateCartCount();
-    
-    // Listen for storage events (when cart is updated from another tab)
     window.addEventListener('storage', updateCartCount);
-    
-    // Custom event for cart updates within the same tab
     window.addEventListener('cartUpdated', updateCartCount);
     
     return () => {
@@ -57,7 +49,7 @@ const Navbar = () => {
             CATEGORIES
           </Link>
           <Link
-            href="/"
+            href="/lookbook"
             className=" tracking-wider hover:text-gray-300 transition-colors"
           >
             LOOKBOOK
@@ -80,7 +72,7 @@ const Navbar = () => {
             ABOUT US
           </Link>
           <Link
-            href="/"
+            href="/wishlist"
             className=" tracking-wider hover:text-gray-300 transition-colors"
           >
             WISHLIST

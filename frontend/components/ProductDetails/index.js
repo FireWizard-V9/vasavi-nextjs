@@ -4,35 +4,42 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Heart, HeartOff } from "lucide-react";
 import AIAgentIcon from "../AIAgentsIcon";
 import { useParams } from "next/navigation";
 import { useCart } from "@/lib/CartContext";
 import { getProduct } from "@/lib/ProductService";
+import { useWishlist } from "@/lib/WishListContext";
 
 export default function ProductDetail({ productId }) {
   const [selectedSize, setSelectedSize] = useState("M");
   const [productInfo, setProductInfo] = useState(null);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [addedToWishlist, setAddedToWishlist] = useState(false);
   const params = useParams();
   const { addToCart } = useCart();
-  
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
   // Use the provided productId or get it from the URL params
   const id = productId || params?.productId || "ebon-aura";
-  
+
   useEffect(() => {
     // Fetch product info from the product service
     const product = getProduct(id);
     if (product) {
       setProductInfo(product);
+      // Check if product is already in wishlist
+      if (isInWishlist(product.id)) {
+        setAddedToWishlist(true);
+      }
     }
-  }, [id]);
+  }, [id, isInWishlist]);
 
   const handleAddToCart = () => {
     if (productInfo && selectedSize) {
       addToCart(productInfo, selectedSize);
       setAddedToCart(true);
-      
+
       // Reset the "Added to Cart" message after 3 seconds
       setTimeout(() => {
         setAddedToCart(false);
@@ -40,20 +47,45 @@ export default function ProductDetail({ productId }) {
     }
   };
 
+  const handleWishlist = () => {
+    if (!productInfo) return;
+
+    if (addedToWishlist) {
+      // Remove from wishlist
+      removeFromWishlist(productInfo.id);
+      setAddedToWishlist(false);
+    } else {
+      // Add to wishlist
+      const success = addToWishlist(productInfo);
+      setAddedToWishlist(success);
+
+      // Show feedback temporarily
+      if (success) {
+        // Optional: Show some added feedback that auto-dismisses
+      }
+    }
+  };
+
   // Show loading state if product is not found
   if (!productInfo) {
-    return <div className="min-h-screen flex items-center justify-center">Loading product...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Loading product...
+      </div>
+    );
   }
 
   // Split the product name for large display styling
-  const nameParts = productInfo.name.split(' ');
-  const firstLine = nameParts.slice(0, 2).join(' ');
-  const secondLine = nameParts.slice(2).join(' ');
+  const nameParts = productInfo.name.split(" ");
+  const firstLine = nameParts.slice(0, 2).join(" ");
+  const secondLine = nameParts.slice(2).join(" ");
 
   return (
     <div className="min-h-screen bg-white mt-13 relative">
       <Head>
-        <title>{productInfo.name} | {productInfo.collection}</title>
+        <title>
+          {productInfo.name} | {productInfo.collection}
+        </title>
         <meta
           name="description"
           content={`${productInfo.name} from the ${productInfo.collection} Collection`}
@@ -124,14 +156,27 @@ export default function ProductDetail({ productId }) {
 
             {/* Action Buttons */}
             <div className="flex gap-4 mb-8">
-              <button 
-                onClick={handleAddToCart} 
+              <button
+                onClick={handleAddToCart}
                 className="w-full bg-black text-white py-3 px-4 font-medium"
               >
                 {addedToCart ? "ADDED TO CART!" : "ADD TO CART"}
               </button>
-              <button className="whitespace-nowrap font-normal text-lg">
-                ADD TO WISHLIST
+              <button
+                onClick={handleWishlist}
+                className="flex items-center whitespace-nowrap font-normal text-lg gap-2 hover:text-gray-700"
+              >
+                {addedToWishlist ? (
+                  <>
+                    <HeartOff size={20} />
+                    REMOVE FROM WISHLIST
+                  </>
+                ) : (
+                  <>
+                    <Heart size={20} />
+                    ADD TO WISHLIST
+                  </>
+                )}
               </button>
             </div>
 
@@ -142,9 +187,7 @@ export default function ProductDetail({ productId }) {
 
             {/* Product Description */}
             <div className="text-gray-500 mb-8 text-lg font-normal">
-              <p className="uppercase">
-                {productInfo.description}
-              </p>
+              <p className="uppercase">{productInfo.description}</p>
             </div>
 
             {/* Size Info Section */}

@@ -1,51 +1,101 @@
+'use client'
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getAllProducts } from "@/lib/ProductService";
 
-const CategorySection = ({ categoryData }) => {
+const CategorySection = () => {
+  const [products, setProducts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("ALL");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // Get all products on component mount
+  useEffect(() => {
+    const allProducts = getAllProducts();
+    setProducts(allProducts);
+    setFilteredProducts(allProducts);
+  }, []);
+
+  // Get unique product types for category tabs
+  const productTypes = [
+    "ALL",
+    ...new Set(products.map((product) => product.type.toUpperCase())),
+  ];
+
+  // Handle category change
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+
+    if (category === "ALL") {
+      setFilteredProducts(products);
+    } else {
+      const filtered = products.filter(
+        (product) => product.type.toUpperCase() === category
+      );
+      setFilteredProducts(filtered);
+    }
+  };
+
   return (
-    <>
-      {categoryData.map((category, index) => (
-        <div key={index} className="px-6 pb-12">
-          <h1 className="text-7xl font-bold mb-12">{category.title}</h1>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            {category.products.map((product) => {
-              // Extract product ID from the link or use a default format
-              const productId = product.link?.split('/').pop() || 
-                                product.title.toLowerCase().replace(/\s+/g, '-');
-              
-              // Use the dynamic route format
-              const productLink = `/product/${productId}`;
-              
-              return (
-                <div key={product.id} className="mb-12">
-                  <Link href={productLink} className="block">
-                    <div className="relative aspect-[3/4] mb-2 bg-white">
-                      <Image
-                        src={product.imageSrc}
-                        alt={product.title}
-                        fill
-                        className="object-cover"
-                      />
+    <div className="max-w-screen-xl mx-auto px-4">
+      {/* Category Navigation */}
+      <div className="flex overflow-x-auto mb-8 pb-2 no-scrollbar">
+        {productTypes.map((category) => (
+          <button
+            key={category}
+            onClick={() => handleCategoryChange(category)}
+            className={`flex-none px-6 py-3 mx-1 text-sm font-medium uppercase whitespace-nowrap transition-colors ${
+              activeCategory === category
+                ? "bg-black text-white"
+                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Products Display */}
+      <div className="mb-16">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8">
+          {activeCategory === "ALL" ? "All Products" : activeCategory}
+        </h1>
+
+        {filteredProducts.length === 0 ? (
+          <p className="text-center py-12 text-gray-500">
+            No products found in this category.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredProducts.map((product) => (
+              <div key={product.id} className="mb-8 group">
+                <Link href={`/product/${product.id}`} className="block">
+                  <div className="relative aspect-[3/4] mb-3 bg-gray-100 overflow-hidden">
+                    <Image
+                      src={product.imageSrc}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105 duration-300"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-black bg-opacity-60 text-white text-xs px-3 py-1">
+                      {product.collection}
                     </div>
-                    
-                    <div className="text-xs uppercase text-gray-50 mb-1">
-                      {product.badge}
-                    </div>
-                    
-                    <h3 className="text-normal font-medium uppercase mb-1">
-                      {product.title}
+                  </div>
+
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-medium uppercase tracking-wider">
+                      {product.name}
                     </h3>
-                    
-                    <p className="text-sm">{product.price}</p>
-                  </Link>
-                </div>
-              );
-            })}
+
+                    <p className="text-sm font-medium">{product.price}</p>
+                  </div>
+                </Link>
+              </div>
+            ))}
           </div>
-        </div>
-      ))}
-    </>
+        )}
+      </div>
+    </div>
   );
 };
 
