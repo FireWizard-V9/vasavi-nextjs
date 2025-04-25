@@ -183,31 +183,10 @@ export default function Cart() {
                 <span className="font-medium">Calculated at checkout</span>
               </div>
             </div>
-            <div className="border-t border-b border-gray-200 py-4 my-6">
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Discounts</span>
-                <Link
-                  href="#"
-                  className="text-black underline hover:text-gray-600 transition-colors"
-                >
-                  Apply discount
-                </Link>
-              </div>
-
-              <p className="text-sm text-gray-600 mb-4">
-                Sign in to use your personal offers!
-              </p>
-
-              <button className="w-full border border-gray-300 hover:border-gray-400 py-3 font-medium transition-colors">
-                Sign in
-              </button>
-            </div>
             <div className="flex justify-between mb-6">
               <span className="text-xl font-bold">Total</span>
               <span className="text-xl font-bold">{formatPrice(total)}</span>
             </div>
-            // In your Cart component, replace the "Continue to checkout" button
-            with:
             <Link href="/checkout">
               <button className="w-full bg-black text-white py-3 mb-4 font-medium hover:bg-gray-800 transition">
                 Proceed to checkout
@@ -258,10 +237,7 @@ export default function Cart() {
                 </p>
               </div>
 
-              <button className="w-full border border-gray-300 hover:border-gray-400 flex items-center justify-center gap-2 py-3 font-medium transition-colors">
-                <FontAwesomeIcon icon={faTruck} />
-                <span>Delivery and return options</span>
-              </button>
+              
             </div>
           </div>
         </div>
