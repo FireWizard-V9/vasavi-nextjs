@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,20 +39,22 @@ const CategorySection = () => {
   return (
     <div className="max-w-screen-xl mx-auto px-4">
       {/* Category Navigation */}
-      <div className="flex overflow-x-auto mb-8 pb-2 no-scrollbar">
-        {productTypes.map((category) => (
-          <button
-            key={category}
-            onClick={() => handleCategoryChange(category)}
-            className={`flex-none px-6 py-3 mx-1 text-sm font-medium uppercase whitespace-nowrap transition-colors ${
-              activeCategory === category
-                ? "bg-black text-white"
-                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+      <div className="flex justify-center overflow-x-auto mb-8 pb-2 no-scrollbar">
+        <div className="flex gap-4">
+          {productTypes.map((category) => (
+            <button
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              className={`flex-none px-6 py-3 text-sm font-medium uppercase whitespace-nowrap transition-colors ${
+                activeCategory === category
+                  ? "bg-black text-white"
+                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Products Display */}
