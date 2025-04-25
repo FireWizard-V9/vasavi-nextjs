@@ -58,7 +58,7 @@ const CategorySection = () => {
       </div>
 
       {/* Products Display */}
-      <div className="mb-16">
+      <div className="">
         <h1 className="text-3xl md:text-5xl font-bold mb-8">
           {activeCategory === "ALL" ? "All Products" : activeCategory}
         </h1>
@@ -84,12 +84,12 @@ const CategorySection = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-medium uppercase tracking-wider">
+                  <div className="space-y-1 text-center">
+                    <h3 className="text-sm  font-medium uppercase tracking-wider">
                       {product.name}
                     </h3>
 
-                    <p className="text-sm font-medium">{product.price}</p>
+                    <p className="text-sm text-gray-100 font-medium">{product.price}</p>
                   </div>
                 </Link>
               </div>
