@@ -34,17 +34,17 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-black text-white py-4 px-6 font-[neuehaas] font-light text-md z-50">
-      <div className="container mx-auto flex justify-between items-center ">
+      <div className="container mx-auto flex justify-between items-center">
         <div className="flex space-x-10">
           <Link
             href="/collections"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             COLLECTIONS
           </Link>
           <Link
             href="/categories"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             CATEGORIES
           </Link>
@@ -66,8 +66,8 @@ const Navbar = () => {
 
         <div className="flex space-x-8">
           <Link
-            href="/"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            href="/#our-story"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             ABOUT US
           </Link>
