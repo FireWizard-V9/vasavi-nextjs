@@ -45,7 +45,7 @@ const products = {
   "sashimi": {
     name: "SASHIMI JACKET",
     type: "jacket",
-    price: "RS.2,699.00",
+    price: "₹2,699.00",
     collection: "Disrupt",
     id: "sashimi",
     newProduct: false,
@@ -55,7 +55,7 @@ const products = {
   "trippulse": {
     name: "TRIPPULSE JACKET",
     type: "jacket",
-    price: "RS.3,699.00",
+    price: "₹3,699.00",
     collection: "Jackets",
     id: "trippulse",
     newProduct: false,
@@ -65,7 +65,7 @@ const products = {
   "warpnet": {
     name: "WARPNET JACKET",
     type: "jacket",
-    price: "RS.3,499.00",
+    price: "₹3,499.00",
     collection: "Jackets",
     id: "warpnet",
     newProduct: false,
@@ -75,7 +75,7 @@ const products = {
   "zip-go": {
     name: "ZIP & GO JACKET",
     type: "jacket",
-    price: "RS.2,699.00",
+    price: "₹2,699.00",
     collection: "Disrupt",
     id: "zip-go",
     newProduct: false,
@@ -85,7 +85,7 @@ const products = {
   "blue-cargo": {
     name: "BLUE CARGO PANTS",
     type: "bottoms",
-    price: "RS.2,899.00",
+    price: "₹2,899.00",
     collection: "Bottoms",
     id: "blue-cargo",
     newProduct: false,
@@ -95,7 +95,7 @@ const products = {
   "chillinos": {
     name: "CHILLINOS PANTS",
     type: "bottoms",
-    price: "RS.2,399.00",
+    price: "₹2,399.00",
     collection: "Best Sellers",
     id: "chillinos",
     newProduct: false,
@@ -105,7 +105,7 @@ const products = {
   "parachute-pants": {
     name: "PARACHUTE PANTS",
     type: "bottoms",
-    price: "RS.2,399.00",
+    price: "₹2,399.00",
     collection: "Best Sellers",
     id: "parachute-pants",
     newProduct: false,
@@ -115,7 +115,7 @@ const products = {
   "ember-slate": {
     name: "EMBER SLATE PANTS",
     type: "bottoms",
-    price: "RS.2,900.00",
+    price: "₹2,900.00",
     collection: "Bottoms",
     id: "ember-slate",
     newProduct: false,
@@ -125,7 +125,7 @@ const products = {
   "dark-knight": {
     name: "DARK KNIGHT PANTS",
     type: "bottoms",
-    price: "RS.3,000.00",
+    price: "₹3,000.00",
     collection: "Bottoms",
     id: "dark-knight",
     newProduct: false,
@@ -135,7 +135,7 @@ const products = {
   "rogue-split": {
     name: "ROGUE SPLIT PANTS",
     type: "bottoms",
-    price: "RS.3,800.00",
+    price: "₹3,800.00",
     collection: "Bottoms",
     id: "rogue-split",
     newProduct: false,
@@ -145,7 +145,7 @@ const products = {
   "corsetica": {
     name: "CORSETICA CORSET",
     type: "corset",
-    price: "RS.1,699.00",
+    price: "₹1,699.00",
     collection: "Disrupt",
     id: "corsetica",
     newProduct: false,
@@ -155,7 +155,7 @@ const products = {
   "elysian-curve": {
     name: "ELYSIAN CURVE CORSET",
     type: "corset",
-    price: "RS.3,499.00",
+    price: "₹3,499.00",
     collection: "Best Sellers",
     id: "elysian-curve",
     newProduct: false,
@@ -165,7 +165,7 @@ const products = {
   "embody-grace": {
     name: "EMBODY GRACE CORSET",
     type: "corset",
-    price: "RS.3,599.00",
+    price: "₹3,599.00",
     collection: "Best Sellers",
     id: "embody-grace",
     newProduct: false,
@@ -175,7 +175,7 @@ const products = {
   "raw-allure": {
     name: "RAW ALLURE CORSET",
     type: "corset",
-    price: "RS.2,399.00",
+    price: "₹2,399.00",
     collection: "Corsets",
     id: "raw-allure",
     newProduct: true,
@@ -185,7 +185,7 @@ const products = {
   "serene-drape": {
     name: "SERENE DRAPE CORSET",
     type: "corset",
-    price: "RS.4,699.00",
+    price: "₹4,699.00",
     collection: "Corsets",
     id: "serene-drape",
     newProduct: false,
@@ -225,7 +225,7 @@ const products = {
 "desert-bloom": {
   name: "DESERT BLOOM",
   type: "shirt",
-  price: "RS.2,499.00",
+  price: "₹2,499.00",
   collection: "disrupt",
   id: "desert-bloom",
   newProduct: false,
@@ -235,7 +235,7 @@ const products = {
 "field-flannel": {
   name: "FIELD FLANNEL",
   type: "shirt",
-  price: "RS.2,299.00",
+  price: "₹2,299.00",
   collection: "disrupt",
   id: "field-flannel",
   newProduct: false,
@@ -245,7 +245,7 @@ const products = {
 "lucident": {
   name: "LUCIDENT",
   type: "shirt",
-  price: "RS.2,299.00",
+  price: "₹2,299.00",
   collection: "shirts",
   id: "lucident",
   newProduct: true,
@@ -255,7 +255,7 @@ const products = {
 "blue-block": {
   name: "BLUE BLOCK",
   type: "tshirt",
-  price: "RS.1,999.00",
+  price: "₹1,999.00",
   collection: "disrupt",
   id: "blue-block",
   newProduct: false,
@@ -275,7 +275,7 @@ const products = {
 "galactic-glow": {
   name: "GALACTIC GLOW",
   type: "tshirt",
-  price: "RS.1,999.00",
+  price: "₹1,999.00",
   collection: "disrupt",
   id: "galactic-glow",
   newProduct: true,
@@ -285,7 +285,7 @@ const products = {
 "good-ol-days": {
   name: "GOOD OL' DAYS",
   type: "tshirt",
-  price: "RS.1,999.00",
+  price: "₹1,999.00",
   collection: "disrupt",
   id: "good-ol-days",
   newProduct: true,
@@ -295,7 +295,7 @@ const products = {
 "ivasav": {
   name: "IVASAV",
   type: "tshirt",
-  price: "RS.1,999.00",
+  price: "₹1,999.00",
   collection: "disrupt",
   id: "ivasav",
   newProduct: false,
@@ -305,7 +305,7 @@ const products = {
 "khovar-flow": {
   name: "KHOVAR FLOW",
   type: "tshirt",
-  price: "RS.1,999.00",
+  price: "₹1,999.00",
   collection: "disrupt",
   id: "khovar-flow",
   newProduct: false,
@@ -315,7 +315,7 @@ const products = {
 "mindwrap": {
   name: "MINDWRAP",
   type: "tshirt",
-  price: "RS.4,000.00",
+  price: "₹4,000.00",
   collection: "tshirts",
   id: "mindwrap",
   newProduct: false,
@@ -325,7 +325,7 @@ const products = {
 "rugged-rebel": {
   name: "RUGGED REBEL",
   type: "tshirt",
-  price: "RS.1,699.00",
+  price: "₹1,699.00",
   collection: "disrupt",
   id: "rugged-rebel",
   newProduct: false,
@@ -335,7 +335,7 @@ const products = {
 "trust-no-limits": {
   name: "TRUST NO LIMITS",
   type: "tshirt",
-  price: "RS.2,299.00",
+  price: "₹2,299.00",
   collection: "disrupt",
   id: "trust-no-limits",
   newProduct: false,
@@ -345,7 +345,7 @@ const products = {
 "cropped-tundra-guard": {
   name: "CROPPED TUNDRA GUARD",
   type: "jacket",
-  price: "RS.8,000.00",
+  price: "₹8,000.00",
   collection: "Julley Ladakh",
   id: "cropped-tundra-guard",
   newProduct: false,
@@ -357,7 +357,7 @@ const products = {
 "hoodlink": {
   name: "HOODLINK HOODIE",
   type: "hoodie",
-  price: "RS.3,000.00",
+  price: "₹3,000.00",
   collection: "Julley Ladakh",
   id: "hoodlink",
   newProduct: false,
@@ -367,7 +367,7 @@ const products = {
 "khare-brown": {
   name: "KHARE BROWN HOODIE",
   type: "hoodie",
-  price: "RS.7,500.00",
+  price: "₹7,500.00",
   collection: "Julley Ladakh",
   id: "khare-brown",
   newProduct: false,
@@ -377,7 +377,7 @@ const products = {
 "nomad-evil": {
   name: "NOMAD EVIL HOODIE",
   type: "hoodie",
-  price: "RS.4,799.00",
+  price: "₹4,799.00",
   collection: "Julley Ladakh",
   id: "nomad-evil",
   newProduct: false,
@@ -387,7 +387,7 @@ const products = {
 "skydash": {
   name: "SKYDASH HOODIE",
   type: "hoodie",
-  price: "RS.4,199.00",
+  price: "₹4,199.00",
   collection: "Julley Ladakh",
   id: "skydash",
   newProduct: false,
@@ -397,7 +397,7 @@ const products = {
 "threaded-harmony": {
   name: "THREADED HARMONY HOODIE",
   type: "hoodie",
-  price: "RS.3,899.00",
+  price: "₹3,899.00",
   collection: "Julley Ladakh",
   id: "threaded-harmony",
   newProduct: false,
@@ -407,7 +407,7 @@ const products = {
 "tso-verdan": {
   name: "TSO VERDAN HOODIE",
   type: "hoodie",
-  price: "RS.5,199.00",
+  price: "₹5,199.00",
   collection: "Julley Ladakh",
   id: "tso-verdan",
   newProduct: false,
@@ -417,7 +417,7 @@ const products = {
 "vasatar": {
   name: "VASATAR HOODIE",
   type: "hoodie",
-  price: "RS.4,200.00",
+  price: "₹4,200.00",
   collection: "Julley Ladakh",
   id: "vasatar",
   newProduct: true,

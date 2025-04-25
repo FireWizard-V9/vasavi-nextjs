@@ -5,7 +5,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Heart, HeartOff } from "lucide-react";
-import AIAgentIcon from "../AIAgentsIcon";
 import { useParams } from "next/navigation";
 import { useCart } from "@/lib/CartContext";
 import { getProduct } from "@/lib/ProductService";
@@ -208,8 +207,7 @@ export default function ProductDetail({ productId }) {
         </div>
       </main>
 
-      {/* AI Agent Floating Icon */}
-      <AIAgentIcon productInfo={productInfo} />
+    
     </div>
   );
 }
