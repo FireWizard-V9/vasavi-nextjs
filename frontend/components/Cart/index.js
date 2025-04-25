@@ -3,7 +3,14 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faMinus, faPlus, faShoppingBag, faTruck, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faXmark,
+  faMinus,
+  faPlus,
+  faShoppingBag,
+  faTruck,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "@/lib/CartContext";
 
 export default function Cart() {
@@ -28,7 +35,10 @@ export default function Cart() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse flex flex-col items-center">
-          <FontAwesomeIcon icon={faShoppingBag} className="text-gray-300 text-4xl mb-3" />
+          <FontAwesomeIcon
+            icon={faShoppingBag}
+            className="text-gray-300 text-4xl mb-3"
+          />
           <p className="text-gray-500">Loading your cart...</p>
         </div>
       </div>
@@ -39,7 +49,10 @@ export default function Cart() {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="text-center py-16 bg-gray-50 rounded-lg shadow-sm">
-          <FontAwesomeIcon icon={faShoppingBag} className="text-gray-300 text-5xl mb-4" />
+          <FontAwesomeIcon
+            icon={faShoppingBag}
+            className="text-gray-300 text-5xl mb-4"
+          />
           <h1 className="text-3xl font-bold mb-4">
             Your Shopping Bag is empty!
           </h1>
@@ -60,13 +73,13 @@ export default function Cart() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
-      <h1 className="text-5xl md:text-6xl font-bold mt-10 mb-8 font-[theater]">SHOPPING BAG</h1>
-      
+      <h1 className="text-5xl md:text-6xl font-bold mt-10 mb-8 font-[theater]">
+        SHOPPING BAG
+      </h1>
+
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Cart Items - Left Section */}
         <div className="lg:w-2/3">
-          
-          
           {cartItems.map((item) => (
             <div
               key={`${item.id}-${item.size}`}
@@ -92,8 +105,12 @@ export default function Cart() {
                 </div>
 
                 <div className="flex-grow">
-                  <h3 className="text-lg md:text-xl font-medium">{item.name}</h3>
-                  <p className="text-sm text-gray-500 mt-1">SIZE: {item.size}</p>
+                  <h3 className="text-lg md:text-xl font-medium">
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    SIZE: {item.size}
+                  </p>
                   <p className="text-sm text-gray-500 md:hidden mt-1">
                     {formatPrice(item.priceValue)} × {item.quantity}
                   </p>
@@ -132,7 +149,7 @@ export default function Cart() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="mt-4 md:hidden text-right">
                 <span className="text-xl font-medium font-[theater]">
                   {formatPrice(item.priceValue * item.quantity)}
@@ -140,7 +157,7 @@ export default function Cart() {
               </div>
             </div>
           ))}
-          
+
           <Link
             href="/categories"
             className="inline-flex items-center gap-2 text-gray-600 hover:text-black mb-8 transition-colors"
@@ -153,8 +170,9 @@ export default function Cart() {
         {/* Right Side - Order Summary */}
         <div className="lg:w-1/3">
           <div className="border border-gray-300 rounded-md p-6 sticky top-24">
-            <h2 className="text-2xl font-bold mb-6 font-[theater]">ORDER SUMMARY</h2>
-            
+            <h2 className="text-2xl font-bold mb-6 font-[theater]">
+              ORDER SUMMARY
+            </h2>
             <div className="space-y-4 mb-6">
               <div className="flex justify-between">
                 <span className="text-gray-600">Subtotal</span>
@@ -165,38 +183,42 @@ export default function Cart() {
                 <span className="font-medium">Calculated at checkout</span>
               </div>
             </div>
-            
             <div className="border-t border-b border-gray-200 py-4 my-6">
               <div className="flex justify-between mb-2">
                 <span className="font-bold">Discounts</span>
-                <Link href="#" className="text-black underline hover:text-gray-600 transition-colors">
+                <Link
+                  href="#"
+                  className="text-black underline hover:text-gray-600 transition-colors"
+                >
                   Apply discount
                 </Link>
               </div>
 
-              <p className="text-sm text-gray-600 mb-4">Sign in to use your personal offers!</p>
+              <p className="text-sm text-gray-600 mb-4">
+                Sign in to use your personal offers!
+              </p>
 
               <button className="w-full border border-gray-300 hover:border-gray-400 py-3 font-medium transition-colors">
                 Sign in
               </button>
             </div>
-
             <div className="flex justify-between mb-6">
               <span className="text-xl font-bold">Total</span>
               <span className="text-xl font-bold">{formatPrice(total)}</span>
             </div>
-
-            <button className="w-full bg-black text-white py-4 font-medium hover:bg-gray-800 transition-colors mb-4">
-              Continue to checkout
-            </button>
-
+            // In your Cart component, replace the "Continue to checkout" button
+            with:
+            <Link href="/checkout">
+              <button className="w-full bg-black text-white py-3 mb-4 font-medium hover:bg-gray-800 transition">
+                Proceed to checkout
+              </button>
+            </Link>
             <div className="bg-red-50 border border-red-100 p-3 text-center my-4">
               <p className="text-red-600 text-sm">
-                Vasavi never sends payment links via WhatsApp,
-                SMS or email. Pay only via Vasavi Website.
+                Vasavi never sends payment links via WhatsApp, SMS or email. Pay
+                only via Vasavi Website.
               </p>
             </div>
-
             <div className="mt-8 space-y-6">
               <div>
                 <p className="text-sm font-medium mb-2">We accept</p>
@@ -208,23 +230,31 @@ export default function Cart() {
                     <span className="text-xs font-medium">MC</span>
                   </div>
                   <div className="w-28 h-8 bg-gray-50 border border-gray-100 rounded flex items-center justify-center">
-                    <span className="text-xs font-medium">Cash on Delivery</span>
+                    <span className="text-xs font-medium">
+                      Cash on Delivery
+                    </span>
                   </div>
                 </div>
               </div>
-              
+
               <div className="text-xs text-gray-500 space-y-2">
                 <p>
-                  Prices and delivery costs are not confirmed until you've reached the checkout.
+                  Prices and delivery costs are not confirmed until you've
+                  reached the checkout.
                 </p>
                 <p>
                   15 days free returns. Read more about{" "}
-                  <Link href="#" className="underline hover:text-black transition-colors">
+                  <Link
+                    href="#"
+                    className="underline hover:text-black transition-colors"
+                  >
                     return and refund policy
-                  </Link>.
+                  </Link>
+                  .
                 </p>
                 <p>
-                  Customers would receive SMS/WhatsApp notifications regarding deliveries on the registered phone number.
+                  Customers would receive SMS/WhatsApp notifications regarding
+                  deliveries on the registered phone number.
                 </p>
               </div>
 
