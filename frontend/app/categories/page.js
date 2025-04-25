@@ -7,7 +7,7 @@ import { getProductsByCategory, getAllProducts } from "@/lib/ProductService";
 
 const Products = () => {
   return (
-    <div className="min-h-screen bg-black text-white mt-13">
+    <div className="min-h-screen bg-black text-white mt-14">
       <header className="py-4 px-6 flex justify-between items-center">
         <Link href="/" className="text-sm font-medium">
           ← BACK

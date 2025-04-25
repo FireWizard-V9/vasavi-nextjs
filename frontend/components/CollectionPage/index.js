@@ -1,14 +1,17 @@
+// components/CollectionPage/index.js
 "use client";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { getCollection } from "@/lib/collectionService";
+import { getProduct } from "@/lib/ProductService";
 
 export default function CollectionPage({ collectionId = "julley-ladakh" }) {
   const [collection, setCollection] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     // Fetch collection data based on ID
@@ -17,6 +20,18 @@ export default function CollectionPage({ collectionId = "julley-ladakh" }) {
       
       if (collectionData) {
         setCollection(collectionData);
+        
+        // Enhance items with full product data if needed
+        if (collectionData.items && collectionData.items.length > 0) {
+          const enhancedItems = collectionData.items.map(item => {
+            const productDetails = getProduct(item.productId);
+            return {
+              ...item,
+              fullDetails: productDetails
+            };
+          });
+          setProducts(enhancedItems);
+        }
       } else {
         setError("Collection not found");
       }
@@ -110,37 +125,7 @@ export default function CollectionPage({ collectionId = "julley-ladakh" }) {
         </section>
 
         {/* How It Was Done Section */}
-        <section className="py-16 px-6">
-          <div className="flex flex-col lg:flex-row">
-            <div className="lg:w-1/2 pr-6">
-              <h2 className="text-8xl font-bold mb-16 leading-tight font-[theater] ml-4">
-                HOW IT WAS
-                <br />
-                DONE?
-              </h2>
-
-              <div className="mb-8">
-                <p className="font-medium mb-2 ml-4">MADE WITH LOVE BY 19 PEOPLE</p>
-                <p className="text-sm opacity-80 max-w-lg ml-4">
-                  {collection.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 grid grid-cols-2 gap-5 mt-8 lg:mt-0">
-              {collection.detailImages.map((image, index) => (
-                <div key={index} className="relative aspect-square">
-                  <Image
-                    src={image}
-                    alt={`${collection.title} Detail ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Brand Logo */}
         <section className="py-8 px-7 mr-12 flex justify-end">
@@ -173,13 +158,13 @@ export default function CollectionPage({ collectionId = "julley-ladakh" }) {
                     />
                   </div>
                   <div className="mt-2 flex flex-col">
-                    <span className="text-sm font-sm font-[theater] text-zinc-600 text-center">
+                    <span className="text-sm font-sm font-[theater] text-zinc-400 text-center">
                       {item.collec_name}
                     </span>
-                    <span className="text-sm font-normal text-center">
+                    <span className="text-md font-medium text-center">
                       {item.name}
                     </span>
-                    <span className="text-sm opacity-70 text-center">
+                    <span className="text-md text-white opacity-70 text-center">
                       {item.price}
                     </span>
                   </div>

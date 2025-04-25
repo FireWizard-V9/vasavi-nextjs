@@ -57,7 +57,7 @@ export default function Collection() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Link href="/collection/techno">
-                    <h2 className="text-9xl font-bold text-white tracking-tight font-[theater] mt-[20rem]">
+                    <h2 className="text-9xl font-bold text-cyan-400 tracking-tight font-[theater] mt-[20rem]">
                       TECHNO
                     </h2>
                   </Link>

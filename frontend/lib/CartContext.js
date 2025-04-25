@@ -33,11 +33,12 @@ export function CartProvider({ children }) {
   
   // Helper function to extract numeric price value correctly
   const extractPriceValue = (priceString) => {
-    // First, remove the currency prefix (RS.)
-    const withoutPrefix = priceString.replace(/^RS\./i, '');
-    // Then remove all commas and convert to float
+    // Remove both RS. and ₹ prefixes
+    const withoutPrefix = priceString.replace(/^(RS\.|₹)/i, '');
+    // Remove all commas and convert to float
     return parseFloat(withoutPrefix.replace(/,/g, ''));
   };
+  
   
   const addToCart = (product, size = 'M') => {
     // Extract the numeric price value correctly

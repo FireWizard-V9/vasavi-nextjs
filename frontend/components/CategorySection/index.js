@@ -38,24 +38,26 @@ const CategorySection = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4">
-      {/* Category Navigation */}
-      <div className="flex justify-center overflow-x-auto mb-8 pb-2 no-scrollbar">
-        <div className="flex gap-5">
-          {productTypes.map((category) => (
-            <button
-              key={category}
-              onClick={() => handleCategoryChange(category)}
-              className={`flex-none px-6 py-3 text-sm font-medium uppercase whitespace-nowrap transition-colors ${
-                activeCategory === category
-                  ? "bg-gray-800 text-white"
-                  : "bg-white text-black border border-gray-300 hover:bg-gray-100"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+  {/* Category Navigation */}
+  <div className="flex justify-center mb-8">
+    <div className="inline-flex flex-wrap gap-3 justify-center">
+      {productTypes.map((category) => (
+        <button
+          key={category}
+          onClick={() => handleCategoryChange(category)}
+          className={`px-5 py-2.5 text-sm font-medium rounded-md transition-all duration-200 ${
+            activeCategory === category
+              ? "bg-black text-white shadow-md transform scale-105"
+              : "bg-white text-black border border-gray-200 hover:bg-gray-50 hover:border-gray-300"
+          }`}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+  </div>
+
+
 
       {/* Products Display */}
       <div >

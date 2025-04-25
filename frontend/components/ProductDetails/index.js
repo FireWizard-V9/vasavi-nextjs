@@ -80,7 +80,7 @@ export default function ProductDetail({ productId }) {
   const secondLine = nameParts.slice(2).join(" ");
 
   return (
-    <div className="min-h-screen bg-white mt-13 relative">
+    <div className="min-h-screen bg-white mt-14 relative">
       <Head>
         <title>
           {productInfo.name} | {productInfo.collection}

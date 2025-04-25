@@ -205,7 +205,7 @@ const products = {
 "khadella": {
   name: "KHADELLA JACKET",
   type: "shirt",
-  price: "RS.2,499.00",
+  price: "₹2,499.00",
   collection: "best sellers",
   id: "khadella",
   newProduct: true,
@@ -215,7 +215,7 @@ const products = {
 "sleek-mode": {
   name: "SLEEK MODE JACKET",
   type: "shirt",
-  price: "RS.2,499.00",
+  price: "₹2,499.00",
   collection: "best sellers",
   id: "sleek-mode",
   newProduct: false,
@@ -265,7 +265,7 @@ const products = {
 "dreamwave": {
   name: "DREAMWAVE",
   type: "tshirt",
-  price: "RS.3,800.00",
+  price: "₹3,800.00",
   collection: "best sellers",
   id: "dreamwave",
   newProduct: false,
