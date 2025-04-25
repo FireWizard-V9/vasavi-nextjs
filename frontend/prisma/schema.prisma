@@ -19,3 +19,44 @@ model products {
   product_description String?  @db.Text
   s3_image_url        String?  @db.VarChar(255)
 }
+
+model Order {
+  id                  String      @id
+  userId              String?     // Optional, for registered users
+  status              String      // pending, paid, processing, shipped, delivered, cancelled
+  amount              Float
+  paymentId           String?
+  paidAt              DateTime?
+  
+  customerFirstName   String
+  customerLastName    String
+  customerEmail       String
+  customerPhone       String
+  
+  shippingAddressLine1 String
+  shippingAddressLine2 String?
+  shippingCity         String
+  shippingState        String
+  shippingPincode      String
+  
+  items               OrderItem[]
+  
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+}
+
+model OrderItem {
+  id          String   @id @default(uuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id])
+  
+  productId   String
+  productName String
+  productImage String
+  size        String
+  quantity    Int
+  price       Float
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

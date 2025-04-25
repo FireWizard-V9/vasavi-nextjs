@@ -135,30 +135,27 @@ export default function Cart() {
                 Apply discount
               </Link>
             </div>
-
             <p className="text-md mb-2">Sign in to use your personal offers!</p>
-
             <button className="w-full border font-medium border-gray-300 py-3 mb-4">
               Sign in
             </button>
-
             <hr className="my-6" />
-
             <div className="flex justify-between mb-10">
               <span>Total</span>
               <span>{formatPrice(total)}</span>
             </div>
-
-            <button className="w-full bg-gray-200 text-black py-3 mb-4 font-medium">
-              Continue to checkout
-            </button>
-
+            // In your Cart component, replace the "Continue to checkout" button
+            with:
+            <Link href="/checkout">
+              <button className="w-full bg-black text-white py-3 mb-4 font-medium hover:bg-gray-800 transition">
+                Proceed to checkout
+              </button>
+            </Link>
             <p className="text-red-500 text-md text-center my-4">
               Vasavi never sends payment links via WhatsApp,
               <br />
               SMS or email. Pay only via Vasavi Website.
             </p>
-
             <div className="mt-8">
               <p className="text-sm mb-2">We accept</p>
               <div className="flex gap-2 mb-8">
