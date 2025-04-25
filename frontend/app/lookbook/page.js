@@ -2,9 +2,16 @@
 import { getAllProducts } from "@/lib/ProductService";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Lookbook() {
-  const products = getAllProducts();
+  const [randomizedProducts, setRandomizedProducts] = useState([]);
+  
+  useEffect(() => {
+    const products = getAllProducts();
+    const shuffled = [...products].sort(() => Math.random() - 0.5);
+    setRandomizedProducts(shuffled);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black">
@@ -13,7 +20,7 @@ export default function Lookbook() {
           LOOKBOOK
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((product) => (
+          {randomizedProducts.map((product) => (
             <div key={product.id} className="relative aspect-[3/4] overflow-hidden">
               <Link href={`/product/${product.id}`} className="absolute inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 hover:bg-opacity-75 transition duration-300">
               <Image
