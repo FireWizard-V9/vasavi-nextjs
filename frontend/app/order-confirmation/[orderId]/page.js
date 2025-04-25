@@ -114,7 +114,7 @@ export default function OrderConfirmation() {
 
       <div className="text-center mb-8">
         <Link
-          href="/"
+          href="/categories"
           className="bg-black text-white px-8 py-3 inline-block font-medium hover:bg-gray-800 transition"
         >
           Continue Shopping
