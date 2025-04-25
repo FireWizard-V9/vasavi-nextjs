@@ -1,6 +1,9 @@
+"use client";
+import { useState, useEffect } from "react";
 import CategorySection from "@/components/CategorySection";
 import React from "react";
 import Link from "next/link";
+import { getProductsByCategory, getAllProducts } from "@/lib/ProductService";
 
 const Products = () => {
   return (

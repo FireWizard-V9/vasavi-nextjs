@@ -175,48 +175,138 @@ const products = {
   },
   "boxed-breeze": {
     name: "BOXED BREEZE",
-    type: "disrupt",
-    price: "₹2,599.00",
+    type: "disrupt,shirt",
+    price: "₹1,999.00",
     collection: "disrupt",
     id: "boxed-breeze",
     description: "FLOWING LINES AND LUXURIOUS FABRICS CREATE A SENSE OF CALM ELEGANCE IN THIS UNIQUELY DRAPED CORSET DESIGN.",
     imageSrc: "/assets/images/collecpage_1.jpg"
   },
-  "boxed-breeze": {
-  name: "BOXED BREEZE",
-  type: "disrupt",
-  price: "₹2,599.00",
-  collection: "disrupt",
-  id: "boxed-breez",
-  description: "FLOWING LINES AND LUXURIOUS FABRICS CREATE A SENSE OF CALM ELEGANCE IN THIS UNIQUELY DRAPED CORSET DESIGN.",
-  imageSrc: "/assets/images/collecpage_1.jpg"
-},
 "khadella": {
   name: "KHADELLA JACKET",
-  type: "jacket",
-  price: "RS.3,499.00",
-  collection: "Julley Ladakh",
+  type: "jacket,shirt",
+  price: "RS.2,499.00",
+  collection: "best sellers",
   id: "khadella",
   description: "A PREMIUM JACKET INSPIRED BY TRADITIONAL LADAKHI CRAFTSMANSHIP, FEATURING AUTHENTIC DESIGN ELEMENTS AND DURABLE MATERIALS FOR MOUNTAIN ENVIRONMENTS.",
   imageSrc: "/assets/images/collecpage_2.jpg"
 },
 "sleek-mode": {
   name: "SLEEK MODE JACKET",
-  type: "jacket",
-  price: "RS.2,800.00",
-  collection: "Julley Ladakh",
+  type: "jacket,shirt",
+  price: "RS.2,499.00",
+  collection: "best sellers",
   id: "sleek-mode",
   description: "MINIMALIST DESIGN MEETS MOUNTAIN FUNCTIONALITY IN THIS SLEEK JACKET THAT TRANSITIONS EFFORTLESSLY FROM URBAN SETTINGS TO RUGGED LANDSCAPES.",
   imageSrc: "/assets/images/collecpage_3.jpg"
 },
+"desert-bloom": {
+  name: "DESERT BLOOM",
+  type: "shirt",
+  price: "RS.2,499.00",
+  collection: "disrupt",
+  id: "desert-bloom",
+  description: "A VIBRANT SHIRT INSPIRED BY THE FLORA OF DESERT LANDSCAPES, FEATURING A UNIQUE PATTERN AND LIGHTWEIGHT FABRIC FOR COMFORT.",
+  imageSrc: "/assets/images/desertbloom.webp"
+},
+"field-flannel": {
+  name: "FIELD FLANNEL",
+  type: "shirt",
+  price: "RS.2,299.00",
+  collection: "disrupt",
+  id: "field-flannel",
+  description: "A MODERN TAKE ON CLASSIC FLANNEL SHIRTS, FEATURING A UNIQUE TEXTURE AND CUT THAT EMBRACES BOTH STYLE AND FUNCTION.",
+  imageSrc: "/assets/images/field.webp"
+},
+"lucident": {
+  name: "LUCIDENT",
+  type: "shirt",
+  price: "RS.2,299.00",
+  collection: "shirts",
+  id: "lucident",
+  description: "A LIGHTWEIGHT SHIRT WITH A TRANSLUCENT EFFECT, PERFECT FOR LAYERING OR STYLING ON ITS OWN FOR A BOLD LOOK.",
+  imageSrc: "/assets/images/lucident.webp"
+},
+"blue-block": {
+  name: "BLUE BLOCK",
+  type: "tshirt",
+  price: "RS.1,999.00",
+  collection: "disrupt",
+  id: "blue-block",
+  description: "A BOLD T-SHIRT WITH A STRIKING BLOCK DESIGN, CRAFTED FOR COMFORT AND STYLE, IDEAL FOR CASUAL OUTINGS.",
+  imageSrc: "/assets/images/blueblock.webp"
+},
 "dreamwave": {
-  name: "DREAMWAVE JACKET",
-  type: "jacket",
+  name: "DREAMWAVE",
+  type: "jacket,tshirt",
   price: "RS.3,800.00",
-  collection: "Julley Ladakh",
+  collection: "best sellers",
   id: "dreamwave",
   description: "FLOWING LINES AND ETHEREAL DESIGN ELEMENTS CAPTURE THE SPIRITUAL ESSENCE OF LADAKH'S MOUNTAIN LANDSCAPES IN THIS STATEMENT PIECE.",
   imageSrc: "/assets/images/collecpage_5.jpg"
+},
+"galactic-glow": {
+  name: "GALACTIC GLOW",
+  type: "tshirt",
+  price: "RS.1,999.00",
+  collection: "disrupt",
+  id: "galactic-glow",
+  description: "A COSMIC-INSPIRED T-SHIRT WITH A UNIQUE PRINT THAT EMBRACES THE MYSTIQUE OF THE UNIVERSE, PERFECT FOR STARGAZERS.",
+  imageSrc: "/assets/images/galacticglow.webp"
+},
+"good-ol-days": {
+  name: "GOOD OL' DAYS",
+  type: "tshirt",
+  price: "RS.1,999.00",
+  collection: "disrupt",
+  id: "good-ol-days",
+  description: "A NOSTALGIC T-SHIRT THAT CELEBRATES THE SIMPLE PLEASURES OF LIFE, FEATURING A CLASSIC DESIGN AND COMFORTABLE FIT.",
+  imageSrc: "/assets/images/goodoldays.webp"
+},
+"ivasav": {
+  name: "IVASAV",
+  type: "tshirt",
+  price: "RS.1,999.00",
+  collection: "disrupt",
+  id: "ivasav",
+  description: "A T-SHIRT THAT EMBRACES THE SPIRIT OF ADVENTURE AND DISCOVERY, FEATURING A UNIQUE DESIGN THAT INSPIRES EXPLORATION.",
+  imageSrc: "/assets/images/vasavi.webp"
+},
+"khovar-flow": {
+  name: "KHOVAR FLOW",
+  type: "tshirt",
+  price: "RS.1,999.00",
+  collection: "disrupt",
+  id: "khovar-flow",
+  description: "A T-SHIRT THAT EMBRACES THE SPIRIT OF ADVENTURE AND DISCOVERY, FEATURING A UNIQUE DESIGN THAT INSPIRES EXPLORATION.",
+  imageSrc: "/assets/images/khovar.webp"
+},
+"mindwrap": {
+  name: "MINDWRAP",
+  type: "tshirt",
+  price: "RS.4,000.00",
+  collection: "tshirts",
+  id: "mindwrap",
+  description: "A T-SHIRT THAT EMBRACES THE SPIRIT OF ADVENTURE AND DISCOVERY, FEATURING A UNIQUE DESIGN THAT INSPIRES EXPLORATION.",
+  imageSrc: "/assets/images/mindwrap.webp"
+},
+"rugged-rebel": {
+  name: "RUGGED REBEL",
+  type: "tshirt",
+  price: "RS.1,699.00",
+  collection: "disrupt",
+  id: "rugged-rebel",
+  description: "A BOLD T-SHIRT WITH A STRIKING BLOCK DESIGN, CRAFTED FOR COMFORT AND STYLE, IDEAL FOR CASUAL OUTINGS.",
+  imageSrc: "/assets/images/ruggedrebel.webp"
+},
+"trust-no-limits": {
+  name: "TRUST NO LIMITS",
+  type: "tshirt",
+  price: "RS.2,299.00",
+  collection: "disrupt",
+  id: "trust-no-limits",
+  description: "A BOLD T-SHIRT WITH A STRIKING BLOCK DESIGN, CRAFTED FOR COMFORT AND STYLE, IDEAL FOR CASUAL OUTINGS.",
+  imageSrc: "/assets/images/trustnolimits.webp"
 },
 "cropped-tundra-guard": {
   name: "CROPPED TUNDRA GUARD",
@@ -227,6 +317,73 @@ const products = {
   description: "A MODERN CROPPED VERSION OF OUR CLASSIC TUNDRA GUARD, DESIGNED FOR VERSATILITY WHILE MAINTAINING THE WARMTH AND PROTECTION OF THE ORIGINAL.",
   imageSrc: "/assets/images/collecpage_7.jpg"
 },
+// Add these hoodie products to your products object in ProductService.js
+
+"hoodlink": {
+  name: "HOODLINK HOODIE",
+  type: "hoodie",
+  price: "RS.3,000.00",
+  collection: "Julley Ladakh",
+  id: "hoodlink",
+  description: "A VERSATILE HOODIE DESIGNED FOR BOTH STYLE AND FUNCTIONALITY, FEATURING PREMIUM MATERIALS AND THOUGHTFUL DETAILS.",
+  imageSrc: "/assets/images/hoodlink.webp"
+},
+"khare-brown": {
+  name: "KHARE BROWN HOODIE",
+  type: "hoodie",
+  price: "RS.7,500.00",
+  collection: "Julley Ladakh",
+  id: "khare-brown",
+  description: "LUXURIOUS BROWN HOODIE INSPIRED BY THE EARTHY TONES OF LADAKH'S MOUNTAINS, CRAFTED WITH PREMIUM MATERIALS FOR EXCEPTIONAL COMFORT.",
+  imageSrc: "/assets/images/kharebrown.webp"
+},
+"nomad-evil": {
+  name: "NOMAD EVIL HOODIE",
+  type: "hoodie",
+  price: "RS.4,799.00",
+  collection: "Julley Ladakh",
+  id: "nomad-evil",
+  description: "BOLD AND EDGY DESIGN INSPIRED BY THE NOMADIC CULTURES OF THE HIMALAYAS, FEATURING UNIQUE GRAPHICS AND PREMIUM CONSTRUCTION.",
+  imageSrc: "/assets/images/nomad.webp"
+},
+"skydash": {
+  name: "SKYDASH HOODIE",
+  type: "hoodie",
+  price: "RS.4,199.00",
+  collection: "Julley Ladakh",
+  id: "skydash",
+  description: "INSPIRED BY THE VAST BLUE SKIES OF LADAKH, THIS HOODIE COMBINES COMFORT WITH A DISTINCTIVE DESIGN THAT STANDS OUT.",
+  imageSrc: "/assets/images/skydash.webp"
+},
+"threaded-harmony": {
+  name: "THREADED HARMONY HOODIE",
+  type: "hoodie",
+  price: "RS.3,899.00",
+  collection: "Julley Ladakh",
+  id: "threaded-harmony",
+  description: "A BALANCED BLEND OF TRADITIONAL CRAFTSMANSHIP AND MODERN DESIGN, FEATURING INTRICATE DETAILS AND PREMIUM FABRICS.",
+  imageSrc: "/assets/images/threaded.webp"
+},
+"tso-verdan": {
+  name: "TSO VERDAN HOODIE",
+  type: "hoodie",
+  price: "RS.5,199.00",
+  collection: "Julley Ladakh",
+  id: "tso-verdan",
+  description: "INSPIRED BY THE SERENE LAKES OF LADAKH, THIS HOODIE FEATURES CALMING COLORS AND PREMIUM MATERIALS FOR ULTIMATE COMFORT.",
+  imageSrc: "/assets/images/tso.webp"
+},
+"vasatar": {
+  name: "VASATAR HOODIE",
+  type: "hoodie",
+  price: "RS.4,200.00",
+  collection: "Julley Ladakh",
+  id: "vasatar",
+  description: "A SIGNATURE PIECE THAT EMBODIES THE ESSENCE OF THE VASAVI BRAND, COMBINING STYLE, COMFORT, AND THOUGHTFUL DESIGN.",
+  imageSrc: "/assets/images/vasatar.webp"
+}
+
+
     // Add more products here
   };
   
