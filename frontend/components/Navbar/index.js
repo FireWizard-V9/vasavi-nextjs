@@ -38,13 +38,13 @@ const Navbar = () => {
         <div className="flex space-x-10">
           <Link
             href="/collections"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             COLLECTIONS
           </Link>
           <Link
             href="/categories"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             CATEGORIES
           </Link>
@@ -66,8 +66,8 @@ const Navbar = () => {
 
         <div className="flex space-x-8">
           <Link
-            href="/"
-            className=" tracking-wider hover:text-gray-300 transition-colors"
+            href="/#our-story"
+            className="tracking-wider hover:text-gray-300 transition-colors"
           >
             ABOUT US
           </Link>
