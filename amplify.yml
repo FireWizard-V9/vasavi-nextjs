@@ -1,22 +1,20 @@
 version: 1
-applications:
-  - appRoot: frontend
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - cd frontend  # Navigate to the frontend folder
-            - npm install  # Install all dependencies, including the missing packages
-        build:
-          commands:
-            - npm run build  # Run the build command
-        postBuild:
-          commands:
-            - echo "Build completed successfully!"
-    artifacts:
-      baseDirectory: frontend/.next # Adjust if the build output is elsewhere
-      files:
-        - '**/*'
-    cache:
-      paths:
-        - 'node_modules/**/*'
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd frontend
+        - npm install
+    build:
+      commands:
+        - npm run build
+    postBuild:
+      commands:
+        - echo "Build completed successfully!"
+  artifacts:
+    baseDirectory: frontend/.next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - frontend/node_modules/**/*
