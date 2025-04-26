@@ -5,9 +5,8 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd frontend  # Navigate to frontend folder
-            - npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons  # Install missing packages
-            - npm install  # Install all other dependencies
+            - cd frontend  # Navigate to the frontend folder
+            - npm install  # Install all dependencies, including the missing packages
         build:
           commands:
             - npm run build  # Run the build command
