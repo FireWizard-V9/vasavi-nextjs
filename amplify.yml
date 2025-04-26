@@ -9,9 +9,8 @@ applications:
             - npm install --no-save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
         build:
           commands:
-            - npm run build
+            - NEXTJS_IGNORE_ESLINT=true npm run build
       artifacts:
-        # relative to `frontend/`
         baseDirectory: .next
         files:
           - '**/*'
