@@ -1,17 +1,23 @@
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - cd frontend
-        - npm install
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: frontend/.next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - frontend/node_modules/**/*
+applications:
+  - appRoot: frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd frontend  # Navigate to frontend folder
+            - npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons  # Install missing packages
+            - npm install  # Install all other dependencies
+        build:
+          commands:
+            - npm run build  # Run the build command
+        postBuild:
+          commands:
+            - echo "Build completed successfully!"
+    artifacts:
+      baseDirectory: frontend/.next # Adjust if the build output is elsewhere
+      files:
+        - '**/*'
+    cache:
+      paths:
+        - 'node_modules/**/*'
